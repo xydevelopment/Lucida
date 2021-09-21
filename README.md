@@ -10,7 +10,7 @@ Website of Designs
   
 # Lucida - Design implemented into code | Website
 
-Website deployed with Netlify 
+Website deployed in Netlify 
 
 • https://lucida-static.netlify.app/
 
