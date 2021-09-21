@@ -1,0 +1,321 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+}
+/** Hamburger menu**/
+.nav-bar {
+  display: none;
+}
+
+.menu-bar {
+  position: absolute;
+  top: 38px;
+  right: 18px;
+  cursor: pointer;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.menu-bar .line{
+  width: 25px;
+  height: 2px;
+  margin: 3px;
+  background: #000;
+  transition: all 300ms ease-out;
+}
+
+.nav-bar .nav-items {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,201,18,255);
+  clip-path: circle(30px at 93% 8%);
+  transition: all 400ms ease-out;
+  opacity: 0;
+  z-index: 1;
+}
+
+
+.nav-bar .nav-items .nav-links{
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-bar.toggle .nav-items{
+  clip-path: circle(100%);
+  opacity: 1;
+}
+
+.nav-bar.toggle .menu-bar{
+  box-shadow: none;
+}
+
+.nav-bar.toggle .menu-bar .line:nth-child(1){
+  transform: rotate(-45deg);
+  margin: 0;
+}
+.nav-bar.toggle .menu-bar .line:nth-child(3){
+  opacity: 0;
+}
+.nav-bar.toggle .menu-bar .line:nth-child(2){
+  transform: rotateZ(45deg);
+  margin: -2px;
+}
+.title {
+  height: 100%;
+  transform: translate(0%, 45%);
+}
+.title h1{
+  text-align: center;
+  font-size: 3em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #6f4a8e;
+}
+/** Header **/
+
+header.header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 40px;
+  z-index: 9999;
+  position: fixed;
+  background-color: transparent;
+}
+
+header.header .logo a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+header.header nav.menu {
+  width: 100%;
+  text-align: right;
+}
+
+header.header nav.menu ul {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+header.header nav.menu ul > li {
+  display: inline;
+  list-style: none;
+  margin-right: 15px;
+}
+
+header.header nav.menu ul > li:last-child { margin-right: 0; }
+
+header.header nav.menu ul > li > a {
+  color: #000;
+  position: relative;
+  transition: all .2s ease-in-out;
+  font-weight: 600;  
+  text-decoration: none;
+}
+
+header.header nav.menu ul > li > a:after {
+  left: 0;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  content: '';
+  position: absolute;
+  transition: all .2s ease-in-out;
+  text-decoration: none;
+  background-color: #000;
+}
+header.header nav.menu ul > li > a:hover:after {
+  width: 100%;
+}
+
+/** End of Header **/
+
+/** Section Slider **/
+
+section.slider {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-image: url('../images/bg-slider.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section.slider .content h1 {
+  margin: 40px;
+  padding: 50px;
+  font-size: 4.5rem;
+  border-left: 5px solid #000;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+}
+
+section.slider .content .description {
+  left: 40px;
+  bottom: 40px; 
+  position: absolute;
+  font-weight: 600;  
+  font-family: 'Playfair Display', serif; 
+}
+
+section.slider .featured-images {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+section.slider .featured-images img {
+  width: 47%;
+  left: 20%;
+  bottom: 0;
+  position: absolute;
+}
+
+section.slider .featured-images .swiper-slide.swiper-slide-active {
+  transition: all .2s ease;
+}
+
+/* .swiper-slide:not(.swiper-slide-active){
+  opacity: 0 !important;
+} */
+
+
+section.slider .featured-images .lucida-pagenation .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  margin: 20px 0;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+  border-radius: 100px;
+  background-color: #000;
+}
+
+section.slider .featured-images .lucida-pagenation .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  height: 25px;
+  opacity: 0.2;
+}
+
+/** End of Section Slider **/
+
+
+/** Media query responsive **/
+
+
+@media only screen and (max-width: 768px) {
+  
+.nav-bar {
+    z-index: 999;
+    display: block;
+}
+
+.logo2 a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 21px 47px;
+  display: block;
+}
+
+}
+
+
+/** End of Media query **/
+
+/** Reponsive **/
+@media (max-width: 768px) {
+  header.header {
+    padding: 30px 10px;
+    position: relative;
+  }
+  .menu-bar {
+    z-index: 99999;
+  }
+  .nav-bar.toggle .menu-bar {
+    margin-top: 10px;
+  }
+  .nav-bar.toggle .menu-bar .line {
+    background: #000;
+  }
+  .nav-bar .nav-items {
+    z-index: 9999;
+  }
+  .nav-bar .nav-items .nav-links {
+    color: #000;
+  }
+  section.slider {
+    background-image: none;
+  }
+  section.slider .content h1 {
+    margin: 50px 0px;
+    padding: 25px;
+    font-size: 2.3rem;
+  }
+
+  section.slider .content .description {
+    margin-top: 30px;
+    margin-left: 30px;
+    position: unset;
+  }
+
+  section.slider .featured-images {
+    top: 40px;
+    width: 100%;
+    height: 50vh;
+    position: relative;
+  }
+
+  section.slider .featured-images::after {
+    bottom: -9rem;
+    left: -15rem;
+    width: 550px;
+    height: 100%;
+    content: '';
+    position: absolute;
+    background-image: url(../images/bg-slider.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: scale(1.7);
+  }
+  section.slider .featured-images img {
+    width: 60%;
+  }
+}
+
+/* iPad Portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .menu-bar { 
+    display: none;
+  }
+  section.slider {
+    background-size: 169%;
+    background-position: 58% -15%;
+  }
+  section.slider .content h1 {
+    margin: 17px;
+    padding: 40px;
+    font-size: 2.3rem;
+  }
+  section.slider .featured-images img {
+    width: 63%;
+    left: 17%;
+  }
+}
+/** End of Responsive **/
